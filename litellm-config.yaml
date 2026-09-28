@@ -1,0 +1,10 @@
+model_list:
+  - model_name: architect
+    litellm_params:
+      model: ollama/llama3.2:latest
+      api_base: http://127.0.0.1:11434
+
+  - model_name: editor
+    litellm_params:
+      model: ollama/qwen2.5-coder:3b
+      api_base: http://127.0.0.1:11435
