@@ -2,6 +2,7 @@ import unittest
 from app import app, tasks
 from unittest.mock import patch
 from flask import jsonify
+import uuid
 
 class TestTaskManagementAPI(unittest.TestCase):
 
@@ -31,7 +32,7 @@ class TestTaskManagementAPI(unittest.TestCase):
         self.assertEqual(response.json["id"], task_id)
 
     def test_get_nonexistent_task(self):
-        task_id = str(uuid4())
+        task_id = str(uuid.uuid4())
         response = self.app.get(f"/tasks/{task_id}")
         self.assertEqual(response.status_code, 404)
 
